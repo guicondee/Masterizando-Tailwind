@@ -16,7 +16,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html className="antialiased" lang="en">
       <body className={inter.className}>
         <div className="grid-cols-app grid min-h-screen">
           <Sidebar />

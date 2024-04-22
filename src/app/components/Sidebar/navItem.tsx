@@ -9,7 +9,7 @@ export interface NavItemProps {
 export function NavItem({ title, icon: Icon }: NavItemProps) {
   return (
     <a
-      className="group flex  items-center gap-3 rounded px-3 py-2 hover:bg-green-50 "
+      className="group flex  items-center gap-3 rounded px-3 py-2 hover:bg-green-50"
       href=""
     >
       <Icon className="h-5 w-5 text-zinc-500" />

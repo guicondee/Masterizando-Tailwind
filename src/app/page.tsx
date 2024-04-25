@@ -1,7 +1,10 @@
+"use client";
 import { SettingsTabs } from "./components/SettingsTabs";
 import * as Input from "./components/Form/Input/input";
-import { Mail } from "lucide-react";
+import { Bold, Italic, Link, List, ListOrdered, Mail } from "lucide-react";
 import * as FileInput from "./components/Form/FileInput/Index";
+import * as Select from "./components/Form/Select";
+import { Textarea } from "./components/Form/Textarea/Textarea";
 
 export default function Home() {
   return (
@@ -116,10 +119,14 @@ export default function Home() {
               htmlFor="country"
               className="text-sm font-medium text-zinc-700"
             >
-              County
+              Country
             </label>
 
-            <div></div>
+            <Select.Root placeholder="Select a country...">
+              <Select.Item value="br" text="Brasil" />
+              <Select.Item value="us" text="United State" />
+              <Select.Item value="ar" text="Argentina" />
+            </Select.Root>
           </div>
 
           <div className="grid grid-cols-form gap-3 pt-5">
@@ -130,7 +137,11 @@ export default function Home() {
               Timezone
             </label>
 
-            <div></div>
+            <Select.Root placeholder="Select a timezone...">
+              <Select.Item value="br" text="Pacific Standard Time (PST)" />
+              <Select.Item value="us" text="Pacific Standard Time (PST)" />
+              <Select.Item value="ar" text="Pacific Standard Time (PST)" />
+            </Select.Root>
           </div>
 
           <div className="grid grid-cols-form gap-3 pt-5">
@@ -141,7 +152,57 @@ export default function Home() {
               </span>
             </label>
 
-            <div></div>
+            <div className="space-y-3">
+              <div className="grid grid-cols-2 gap-3">
+                <Select.Root placeholder="" defaultValue="normal">
+                  <Select.Item value="normal" text="Normal text" />
+                  <Select.Item value="md" text="Markdown" />
+                </Select.Root>
+                <div className="flex items-center gap-1">
+                  <button
+                    type="button"
+                    className="rounded-lg p-2 hover:bg-zinc-100"
+                  >
+                    <Bold strokeWidth={3} className="h-4 w-4 text-zinc-500" />
+                  </button>
+
+                  <button
+                    type="button"
+                    className="rounded-lg p-2 hover:bg-zinc-100"
+                  >
+                    <Italic strokeWidth={3} className="h-4 w-4 text-zinc-500" />
+                  </button>
+
+                  <button
+                    type="button"
+                    className=" rounded-lg p-2 hover:bg-zinc-100"
+                  >
+                    <Link strokeWidth={3} className="h-4 w-4 text-zinc-500" />
+                  </button>
+
+                  <button
+                    type="button"
+                    className=" rounded-lg p-2 hover:bg-zinc-100"
+                  >
+                    <List strokeWidth={3} className="h-4 w-4 text-zinc-500" />
+                  </button>
+
+                  <button
+                    type="button"
+                    className=" rounded-lg p-2 hover:bg-zinc-100"
+                  >
+                    <ListOrdered
+                      strokeWidth={3}
+                      className="h-4 w-4 text-zinc-500"
+                    />
+                  </button>
+                </div>
+              </div>
+              <Textarea
+                id="bio"
+                defaultValue="I'm a Product Designer based in Melbourne, Australia. I specialise in UX/UI design, brand strategy, and Webflow development."
+              />
+            </div>
           </div>
 
           <div className="grid grid-cols-form gap-3 pt-5">

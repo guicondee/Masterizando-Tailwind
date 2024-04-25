@@ -5,6 +5,7 @@ import { Bold, Italic, Link, List, ListOrdered, Mail } from "lucide-react";
 import * as FileInput from "./components/Form/FileInput/Index";
 import * as Select from "./components/Form/Select";
 import { Textarea } from "./components/Form/Textarea/Textarea";
+import { Button } from "./components/Button/Button";
 
 export default function Home() {
   return (
@@ -22,19 +23,13 @@ export default function Home() {
           </div>
 
           <div className="flex items-center gap-2">
-            <button
-              type="button"
-              className="rounded-lg border border-zinc-300 px-4 py-2 text-sm font-semibold text-zinc-700 shadow-sm hover:bg-zinc-50"
-            >
+            <Button variant="outline" type="button">
               Cancel
-            </button>
-            <button
-              form="settings"
-              type="submit"
-              className="rounded-lg bg-green-500 px-4 py-2 text-sm font-semibold text-white shadow-sm hover:bg-green-600 "
-            >
+            </Button>
+
+            <Button variant="primary" type="submit">
               Save
-            </button>
+            </Button>
           </div>
         </div>
 
@@ -159,43 +154,28 @@ export default function Home() {
                   <Select.Item value="md" text="Markdown" />
                 </Select.Root>
                 <div className="flex items-center gap-1">
-                  <button
-                    type="button"
-                    className="rounded-lg p-2 hover:bg-zinc-100"
-                  >
+                  <Button variant="ghost" type="button">
                     <Bold strokeWidth={3} className="h-4 w-4 text-zinc-500" />
-                  </button>
+                  </Button>
 
-                  <button
-                    type="button"
-                    className="rounded-lg p-2 hover:bg-zinc-100"
-                  >
+                  <Button variant="ghost" type="button">
                     <Italic strokeWidth={3} className="h-4 w-4 text-zinc-500" />
-                  </button>
+                  </Button>
 
-                  <button
-                    type="button"
-                    className=" rounded-lg p-2 hover:bg-zinc-100"
-                  >
+                  <Button variant="ghost" type="button">
                     <Link strokeWidth={3} className="h-4 w-4 text-zinc-500" />
-                  </button>
+                  </Button>
 
-                  <button
-                    type="button"
-                    className=" rounded-lg p-2 hover:bg-zinc-100"
-                  >
+                  <Button variant="ghost" type="button">
                     <List strokeWidth={3} className="h-4 w-4 text-zinc-500" />
-                  </button>
+                  </Button>
 
-                  <button
-                    type="button"
-                    className=" rounded-lg p-2 hover:bg-zinc-100"
-                  >
+                  <Button variant="ghost" type="button">
                     <ListOrdered
                       strokeWidth={3}
                       className="h-4 w-4 text-zinc-500"
                     />
-                  </button>
+                  </Button>
                 </div>
               </div>
               <Textarea
@@ -224,18 +204,13 @@ export default function Home() {
           </div>
 
           <div className="flex items-center justify-end gap-2 pt-5">
-            <button
-              type="button"
-              className="rounded-lg border border-zinc-300 px-4 py-2 text-sm font-semibold text-zinc-700 shadow-sm hover:bg-zinc-50"
-            >
+            <Button variant="outline" type="button">
               Cancel
-            </button>
-            <button
-              type="submit"
-              className="rounded-lg bg-green-500 px-4 py-2 text-sm font-semibold text-white shadow-sm hover:bg-green-600 "
-            >
+            </Button>
+
+            <Button variant="primary" type="submit">
               Save
-            </button>
+            </Button>
           </div>
         </form>
       </div>

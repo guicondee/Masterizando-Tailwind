@@ -11,10 +11,10 @@ export function Profile() {
       />
 
       <div className="flex w-full flex-col truncate">
-        <span className="text-sm font-semibold text-zinc-700">
+        <span className="text-sm font-semibold text-zinc-700 dark:text-zinc-100">
           Guilherme Condé
         </span>
-        <p className="truncate text-sm text-zinc-500">
+        <p className="truncate text-sm text-zinc-500 dark:text-zinc-400">
           guilherme.dev@gmail.com
         </p>
       </div>

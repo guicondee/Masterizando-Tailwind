@@ -16,7 +16,8 @@ const button = tv({
       primary: "bg-green-500 text-white hover:bg-green-600",
       outline:
         "border border-zinc-300 text-zinc-700 rounded-lg hover:bg-zinc-50",
-      ghost: "rounded-md px-2 hover:bg-zinc-100 shadow-none text-zinc-500",
+      ghost:
+        "rounded-md px-2 hover:bg-zinc-100 shadow-none text-zinc-500 dark:hover:bg-zinc-800 dark:text-zinc-400",
     },
   },
 

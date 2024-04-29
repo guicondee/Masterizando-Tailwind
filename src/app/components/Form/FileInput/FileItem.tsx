@@ -7,24 +7,26 @@ const fileItem = tv({
   slots: {
     container:
       "group flex items-start gap-4 rounded-lg border border-zinc-200 p-4",
-    icon: "rounded-full border-4 border-green-50 bg-green-100 p-2 text-green-600",
+    icon: "rounded-full border-4 border-green-50 bg-green-100 p-2 text-green-600 dark:border-zinc-700 dark:bg-zinc-800 dark:text-zinc-500",
     deleteButton: "",
   },
 
   variants: {
     state: {
       progress: {
-        container: "",
+        container: "dark:border-zinc-700",
+        icon: "",
+      },
+      completed: {
+        container: "border-green-500 dark:border-green-300/40",
         icon: "",
       },
       error: {
-        container: "bg-error-25 border-error-300",
-        icon: "border-error-50 bg-error-100 text-error-600",
-        deleteButton: "text-error-700 hover:text-error-900 hover:bg-error-50",
-      },
-      completed: {
-        container: "border-green-500",
-        icon: "",
+        container:
+          "bg-error-25 border-error-300 dark:bg-error-500/5 dark:border-error-500/30",
+        icon: "border-error-50 bg-error-100 text-error-600 dark:bg-error-500/5 dark:border-error-500/30 dark:text-error-400",
+        deleteButton:
+          "text-error-700 hover:text-error-900 hover:bg-error-50 dark:text-error-40 dark:hover:text-error-300",
       },
     },
   },
@@ -50,15 +52,17 @@ export function FileItem({ name, size, state }: FileInputProps) {
       {state === "error" ? (
         <div className="flex flex-1 flex-col items-start gap-1">
           <div className="flex flex-col">
-            <span className="text-sm font-medium text-error-700">
+            <span className="text-sm font-medium text-error-700 dark:text-error-400">
               Upload failed, please try again.
             </span>
-            <span className="text-sm text-error-600">{name}</span>
+            <span className="text-sm text-error-600 dark:text-error-500">
+              {name}
+            </span>
           </div>
 
           <button
             type="button"
-            className="text-sm font-semibold text-error-700 hover:text-error-900"
+            className="text-sm font-semibold text-error-700 hover:text-error-900 dark:text-error-400 dark:hover:text-error-300"
           >
             try again
           </button>
@@ -66,18 +70,22 @@ export function FileItem({ name, size, state }: FileInputProps) {
       ) : (
         <div className="flex flex-1 flex-col items-start gap-1 ">
           <div className="flex flex-col">
-            <span className="text-sm font-medium text-zinc-700">{name}</span>
-            <span className="text-sm text-zinc-500">{formatBytes(size)}</span>
+            <span className="text-sm font-medium text-zinc-700 dark:text-zinc-100">
+              {name}
+            </span>
+            <span className="text-sm text-zinc-500 dark:text-zinc-400">
+              {formatBytes(size)}
+            </span>
           </div>
 
           <div className="flex w-full items-center gap-3">
-            <div className="h-2 flex-1 rounded-full bg-zinc-100">
+            <div className="h-2 flex-1 rounded-full bg-zinc-100 dark:bg-zinc-600">
               <div
-                className="h-2 rounded-full bg-green-600"
+                className="h-2 rounded-full bg-green-600 dark:bg-green-400"
                 style={{ width: state === "completed" ? "100%" : "80%" }}
               />
             </div>
-            <span className="text-sm font-medium text-zinc-700">
+            <span className="text-sm font-medium text-zinc-700 dark:text-zinc-300">
               {state === "completed" ? "100%" : "80%"}
             </span>
           </div>

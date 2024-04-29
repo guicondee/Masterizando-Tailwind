@@ -14,7 +14,7 @@ export function Root({
 }: SelectPrimitiveProps) {
   return (
     <SelectPrimitive.Root {...props}>
-      <SelectPrimitive.Trigger className="flex h-11 w-full items-center justify-between gap-2 rounded-lg border border-zinc-300 px-3 py-2 shadow-sm outline-none focus:border-green-300 focus:ring-4 focus:ring-green-100 data-[placeholder]:text-zinc-600">
+      <SelectPrimitive.Trigger className="flex h-11 w-full items-center justify-between gap-2 rounded-lg border border-zinc-300 px-3 py-2 shadow-sm outline-none focus:border-green-300 focus:ring-4 focus:ring-green-100 data-[placeholder]:text-zinc-600 dark:border-zinc-700 dark:bg-zinc-800 dark:text-zinc-100 dark:focus-within:border-green-500 dark:focus-within:ring-green-300/10 dark:data-[placeholder]:text-zinc-400 ">
         <SelectPrimitive.Value
           placeholder={placeholder}
           className="text-black"
@@ -29,7 +29,7 @@ export function Root({
           sideOffset={8}
           side="bottom"
           position="popper"
-          className="animate-slideDownAndFade z-10 w-[--radix-select-trigger-width] overflow-hidden rounded-lg border border-zinc-200 bg-white shadow-md "
+          className="z-10 w-[--radix-select-trigger-width] animate-slideDownAndFade overflow-hidden rounded-lg border border-zinc-200 bg-white shadow-md dark:border-zinc-700 dark:bg-zinc-800"
         >
           <SelectPrimitive.Viewport>{children}</SelectPrimitive.Viewport>
         </SelectPrimitive.Content>

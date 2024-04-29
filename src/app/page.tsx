@@ -14,21 +14,55 @@ import * as FileInput from "./components/Form/FileInput/Index";
 import * as Select from "./components/Form/Select";
 import { Textarea } from "./components/Form/Textarea/Textarea";
 import { Button } from "./components/Button/Button";
+import { useEffect } from "react";
 
 export default function Home() {
+  useEffect(() => {
+    const handleClickAlterTheme = () => {
+      if (!("f7a600910fcd" in localStorage)) {
+        console.log("theme 3", !("f7a600910fcd" in localStorage));
+        if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+          document.documentElement.classList.add("dark");
+          localStorage.setItem("f7a600910fcd", "dark");
+          return;
+        }
+
+        document.documentElement.classList.add("white");
+        localStorage.setItem("f7a600910fcd", "white");
+        return;
+      }
+
+      const theme = localStorage.getItem("f7a600910fcd");
+
+      document.documentElement.classList.add(theme ?? "dark");
+      localStorage.setItem("f7a600910fcd", theme ?? "dark");
+    };
+
+    handleClickAlterTheme();
+  }, []);
+
+  const themCLicked = () => {
+    if (document.documentElement.classList[0] === "dark") {
+      document.documentElement.classList.remove("dark");
+      document.documentElement.classList.add("white");
+      localStorage.setItem("f7a600910fcd", "white");
+    } else {
+      console.log("alo");
+      document.documentElement.classList.remove("white");
+      document.documentElement.classList.add("dark");
+      localStorage.setItem("f7a600910fcd", "dark");
+    }
+  };
+
   return (
     <>
       <div className="flex justify-between">
         <h1 className="text-3xl font-medium text-zinc-900 dark:text-zinc-100">
           Settings
         </h1>
-        {/* <Button
-          onClick={() => handleClickAlterTheme()}
-          type="button"
-          variant="ghost"
-        >
+        <Button onClick={() => themCLicked()} type="button" variant="ghost">
           <SunMoon />
-        </Button> */}
+        </Button>
       </div>
       <SettingsTabs />
 

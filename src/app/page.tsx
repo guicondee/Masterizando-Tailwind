@@ -47,7 +47,6 @@ export default function Home() {
       document.documentElement.classList.add("white");
       localStorage.setItem("f7a600910fcd", "white");
     } else {
-      console.log("alo");
       document.documentElement.classList.remove("white");
       document.documentElement.classList.add("dark");
       localStorage.setItem("f7a600910fcd", "dark");
